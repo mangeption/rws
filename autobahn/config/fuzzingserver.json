@@ -1,0 +1,10 @@
+{
+    "url": "ws://host.docker.internal:8080",
+    "options": {
+        "server": "MyServer",
+        "version": 1
+    },
+    "outdir": "/reports/servers",
+    "cases": ["*"],
+    "exclude-cases": []
+}

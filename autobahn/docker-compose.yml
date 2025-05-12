@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  autobahn:
+    image: crossbario/autobahn-testsuite:latest
+    volumes:
+      - ./config:/config
+      - ./reports:/reports
+    command: >
+      sh -c "
+      ping -c 1 host.docker.internal
+        wstest -m fuzzingclient -s /config/fuzzingclient.json
+      "
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    network_mode: "host"
+
